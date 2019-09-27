@@ -1,0 +1,70 @@
+module miniproj(SW, GPIO_0,HEX0);
+input [3:0] SW;
+
+output [6:0]HEX0;
+
+                                                                                                                                                                                                                                                                            
+wire [3:0]RW;
+always @(SW) (
+if SW = 1
+{cols = 0;}
+else if SW = 2
+{cols = 1;}
+else if SW = 4
+{cols = 2;}
+else if SW = 8
+{cols = 3;})
+
+assign RW[0] = GPIO_0[18];  
+assign RW[1] = GPIO_0[20];
+assign RW[2] = GPIO_0[22];
+assign RW[3] = GPIO_0[24];
+
+if RW = 1
+{rows = 0;}
+else if RW = 2
+{rows = 1;}
+else if RW = 4
+{rows = 2;}
+else if RW = 8
+{rows = 3;}
+endmodule
+
+module indextobutton (row,col, button);
+input [0]row, col;
+output[3:0]button;
+
+if row ==0
+{if col==0{button =0}
+else if col==1{button =1}
+else if col==2{button =2}
+else button = 15 }
+else if row ==1{
+if col==0{button =4}
+else if col==1{button =5}
+else if col==2{button =6}
+else button =14 }
+else if row ==2{if col==0{button =7}
+else if col==1{button =8}
+else if col==2{button =9}
+else button =13}
+else
+{if col==0{button =10}
+else if col==1{button =0}
+else if col==2{button =11}
+else button = 13}
+endmodule
+
+module buttontoHex (C, HEX0);
+input [3:0] C;
+output [6:0] HEX0;
+
+if button < 10 {
+    assign Display[0]= (C[1]&C[2]&C[3]) | (C[1]&~C[2]&~C[3]) | (C[3]&~C[1]&~C[2] | (C[3]&C[0]));                                   //          display [0] is off when switch 0 is off             \\
+    assign Display[1]= (C[1]&C[2]&~C[3])|(C[1]&~C[2]&C[3]);           //  display[1] is off when switch 1 and switch 0 are different  \\
+    assign Display[2]= ~C[1]&C[2]&~C[3];           //  display[2] is off when switch 1 and switch 0 are different  \\
+    assign Display[3]= ~C[1]&~C[2]&C[3] | C[1]&~C[2]&~C[3] | C[1]&C[2]&C[3] ;                           //  display[3] is off when both switch 1 and switch 0 are off   \\
+    assign Display[4]= C[0]&C[3] | C[2]&C[3] | ~C[0]&~C[1]&C[3] | ~C[0]&~C[1]&C[2];                                  //                   display[4] is always on                    \\
+    assign Display[5]=C[3] | C[1]&~C[2]&~C[3];                                  //                   display[5] is always on                    \\
+    assign Display[6]=~C[0]&~C[1]&~C[2] | C[1]&C[2]&C[3];                             //           display[6] is off when switch 1 is on              \\
+}
