@@ -1,5 +1,5 @@
 Analysis & Synthesis report for A2
-Wed Oct 02 15:49:44 2019
+Wed Oct 02 15:54:22 2019
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -41,7 +41,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Oct 02 15:49:44 2019     ;
+; Analysis & Synthesis Status        ; Successful - Wed Oct 02 15:54:22 2019     ;
 ; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
 ; Revision Name                      ; A2                                        ;
 ; Top-level Entity Name              ; switchInitial                             ;
@@ -169,7 +169,7 @@ applicable agreement for further details.
 +----------------------------------+-----------------+------------------------+-------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path  ; Library ;
 +----------------------------------+-----------------+------------------------+-------------------------------+---------+
-; switchInitial.v                  ; yes             ; User Verilog HDL File  ; E:/371minipro/switchInitial.v ;         ;
+; switchInitial.v                  ; yes             ; User Verilog HDL File  ; D:/371minipro/switchInitial.v ;         ;
 +----------------------------------+-----------------+------------------------+-------------------------------+---------+
 
 
@@ -227,7 +227,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Wed Oct 02 15:49:40 2019
+    Info: Processing started: Wed Oct 02 15:54:21 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off A2 -c A2
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file main.v
@@ -248,9 +248,9 @@ Info (21057): Implemented 25 device resources after synthesis - the final resour
     Info (21059): Implemented 7 output pins
     Info (21061): Implemented 10 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 543 megabytes
-    Info: Processing ended: Wed Oct 02 15:49:44 2019
-    Info: Elapsed time: 00:00:04
+    Info: Peak virtual memory: 542 megabytes
+    Info: Processing ended: Wed Oct 02 15:54:22 2019
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 
