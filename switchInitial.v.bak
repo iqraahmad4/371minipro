@@ -1,0 +1,3 @@
+module switchInitial(SW,row,HEX0);
+input[3:0] SW;
+input[3:0]row;

@@ -1,5 +1,5 @@
 Flow report for A2
-Fri Sep 27 15:57:38 2019
+Wed Oct 02 15:49:47 2019
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -38,24 +38,26 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Flow Summary                                                                   ;
 +------------------------------------+-------------------------------------------+
-; Flow Status                        ; Flow Failed - Fri Sep 27 15:57:38 2019    ;
+; Flow Status                        ; Flow Failed - Wed Oct 02 15:49:47 2019    ;
 ; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
 ; Revision Name                      ; A2                                        ;
-; Top-level Entity Name              ; miniproj                                  ;
+; Top-level Entity Name              ; switchInitial                             ;
 ; Family                             ; Cyclone IV GX                             ;
-; Total logic elements               ; N/A until Partition Merge                 ;
-;     Total combinational functions  ; N/A until Partition Merge                 ;
-;     Dedicated logic registers      ; N/A until Partition Merge                 ;
-; Total registers                    ; N/A until Partition Merge                 ;
-; Total pins                         ; N/A until Partition Merge                 ;
-; Total virtual pins                 ; N/A until Partition Merge                 ;
-; Total memory bits                  ; N/A until Partition Merge                 ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                 ;
-; Total GXB Receiver Channel PCS     ; N/A until Partition Merge                 ;
-; Total GXB Receiver Channel PMA     ; N/A until Partition Merge                 ;
-; Total GXB Transmitter Channel PCS  ; N/A until Partition Merge                 ;
-; Total GXB Transmitter Channel PMA  ; N/A until Partition Merge                 ;
-; Total PLLs                         ; N/A until Partition Merge                 ;
+; Total logic elements               ; 10 / 14,400 ( < 1 % )                     ;
+;     Total combinational functions  ; 10 / 14,400 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 0 / 14,400 ( 0 % )                        ;
+; Total registers                    ; 0                                         ;
+; Total pins                         ; 15 / 81 ( 19 % )                          ;
+; Total virtual pins                 ; 0                                         ;
+; Total memory bits                  ; 0 / 552,960 ( 0 % )                       ;
+; Embedded Multiplier 9-bit elements ; 0                                         ;
+; Total GXB Receiver Channel PCS     ; 0 / 2 ( 0 % )                             ;
+; Total GXB Receiver Channel PMA     ; 0 / 2 ( 0 % )                             ;
+; Total GXB Transmitter Channel PCS  ; 0 / 2 ( 0 % )                             ;
+; Total GXB Transmitter Channel PMA  ; 0 / 2 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 3 ( 0 % )                             ;
+; Device                             ; EP4CGX15BF14C6                            ;
+; Timing Models                      ; Final                                     ;
 +------------------------------------+-------------------------------------------+
 
 
@@ -64,25 +66,25 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/27/2019 15:57:38 ;
+; Start date & time ; 10/02/2019 15:49:40 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; A2                  ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                    ;
-+-------------------------------------+--------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 88623633942161.156955665708980 ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                           ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)         ; <None>        ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                       ; --            ; miniproj    ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --            ; miniproj    ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                         ; --            ; miniproj    ; Top            ;
-; TOP_LEVEL_ENTITY                    ; miniproj                       ; A2            ; --          ; --             ;
-+-------------------------------------+--------------------------------+---------------+-------------+----------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                      ;
++-------------------------------------+--------------------------------+---------------+---------------+----------------+
+; Assignment Name                     ; Value                          ; Default Value ; Entity Name   ; Section Id     ;
++-------------------------------------+--------------------------------+---------------+---------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 88623633934965.156998458010416 ; --            ; --            ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                           ; --            ; --            ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)         ; <None>        ; --            ; --             ;
+; PARTITION_COLOR                     ; 16764057                       ; --            ; switchInitial ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --            ; switchInitial ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                         ; --            ; switchInitial ; Top            ;
+; TOP_LEVEL_ENTITY                    ; switchInitial                  ; A2            ; --            ; --             ;
++-------------------------------------+--------------------------------+---------------+---------------+----------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -90,8 +92,9 @@ applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:01     ; 1.0                     ; 522 MB              ; 00:00:01                           ;
-; Total                ; 00:00:01     ; --                      ; --                  ; 00:00:01                           ;
+; Analysis & Synthesis ; 00:00:02     ; 1.0                     ; 543 MB              ; 00:00:01                           ;
+; Fitter               ; 00:00:02     ; 1.0                     ; 596 MB              ; 00:00:01                           ;
+; Total                ; 00:00:04     ; --                      ; --                  ; 00:00:02                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -100,7 +103,8 @@ applicable agreement for further details.
 +----------------------+------------------+-----------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +----------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis ; en-379919        ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis ; en-379910        ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter               ; en-379910        ; Windows 7 ; 6.2        ; x86_64         ;
 +----------------------+------------------+-----------+------------+----------------+
 
 
@@ -108,6 +112,7 @@ applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off A2 -c A2
+quartus_fit --read_settings_files=off --write_settings_files=off A2 -c A2
 
 
 
